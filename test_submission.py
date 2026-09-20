@@ -249,7 +249,6 @@ def main():
     for label, requirements in cases.items():
         run_case(label, requirements)
 
-    print("\n" + "=" * 68)
     print("ALL CASES PASSED")
   
     print("\nValidated:")
