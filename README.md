@@ -52,7 +52,8 @@ The selected recommendation can then be visualized using a **2D schematic bathro
 ## System Architecture
 
 The system follows a modular pipeline in which the LLM is responsible for understanding natural-language requirements, while deterministic Python components perform validation, filtering, scoring, optimization, explanation generation, and spatial layout generation.
-![KOHLER AI Bathroom Designer System Architecture](PPT,PROMPT,VIDEO/Data Flow Diagram.png)
+
+![KOHLER AI Bathroom Designer System Architecture](<PPT,PROMPT,VIDEO/Data Flow Diagram.png>)
 
 ### Major Data Stores
 
@@ -669,22 +670,7 @@ The extracted JSON is then validated against the application's supported:
 The system intentionally separates language understanding from recommendation logic.
 
 ```text
-                    User Request
-                         │
-                         ▼
-                       LLM
-                         │
-                         ▼
-                Structured Requirements
-                         │
-                         ▼
-                 Validation Layer
-                         │
-                         ▼
-              Deterministic Recommendation
-                         │
-                         ▼
-                  Product Results
+User Request → LLM → Structured Requirements → Validation Layer → Deterministic Recommendation → Product Results
 ```
 
 The LLM does not directly choose products.
@@ -843,41 +829,7 @@ A successful validation run ends with:
 ALL CASES PASSED
 ```
 
----
 
-## Demo
-
-### Application Flow
-
-```text
-User Requirements
-       │
-       ▼
-Requirement Extraction
-       │
-       ▼
-Requirement Validation
-       │
-       ▼
-Product Filtering
-       │
-       ▼
-Product Scoring
-       │
-       ▼
-Bathroom Optimization
-       │
-       ▼
-Top-K Recommendations
-       │
-       ├───────────────┐
-       │               │
-       ▼               ▼
-Recommendation     Explanation
-       │
-       ▼
-2D Bathroom Layout
-```
 
 ### Suggested Demo Flow
 
@@ -896,7 +848,7 @@ Recommendation     Explanation
 A project demonstration video can be linked here:
 
 ```text
-[https://drive.google.com/file/d/1mTjTEXPGUnrD2NjGCjzJN6JTh46dkCxO/view?usp=drive_link]
+https://drive.google.com/file/d/1mTjTEXPGUnrD2NjGCjzJN6JTh46dkCxO/view?usp=drive_link
 ```
 
 ---
