@@ -169,9 +169,7 @@ def run_case(label, requirements):
 
 
 def main():
-    print("=" * 68)
     print("KOHLER AI BATHROOM DESIGNER - SUBMISSION VALIDATION")
-    print("=" * 68)
 
     cases = {
         "A - Modern / Water Saving": {
@@ -253,15 +251,15 @@ def main():
 
     print("\n" + "=" * 68)
     print("ALL CASES PASSED")
-    print("=" * 68)
+  
     print("\nValidated:")
-    print("  ✓ recommendation generation")
-    print("  ✓ product-only search")
-    print("  ✓ complete category coverage")
-    print("  ✓ budget compliance")
-    print("  ✓ catalog dimension compatibility")
-    print("  ✓ 2D layout generation")
-    print("  ✓ multiple bathroom sizes and preferences")
+    print("  Done recommendation generation")
+    print("  Done product-only search")
+    print("  Done complete category coverage")
+    print("  Done budget compliance")
+    print("  Done catalog dimension compatibility")
+    print("  Done 2D layout generation")
+    print("  Done multiple bathroom sizes and preferences")
 
 
 if __name__ == "__main__":
