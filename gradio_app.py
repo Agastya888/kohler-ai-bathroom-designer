@@ -1188,7 +1188,7 @@ with gr.Blocks(
 
 <div class="brand-subtitle">
 Tell us what you want, or choose your preferences yourself.
-We’ll use your choices to create a personalized KOHLER bathroom recommendation.
+We’ll use your choices to create a personalized bathroom recommendation.
 </div>
 """
     )

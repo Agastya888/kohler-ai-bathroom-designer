@@ -1,6 +1,6 @@
-# KOHLER AI Bathroom Designer
+# AI Bathroom Designer
 
-An AI-assisted bathroom planning and product recommendation system that converts user requirements into personalized KOHLER bathroom product recommendations while respecting budget, space, style, and priority constraints.
+An AI-assisted bathroom planning and product recommendation system that converts user requirements into personalized bathroom product recommendations while respecting budget, space, style, and priority constraints.
 
 The application combines **LLM-based requirement extraction**, a **constraint-aware recommendation engine**, and an **entrance-aware 2D bathroom layout generator** in an interactive Gradio interface.
 
@@ -8,7 +8,7 @@ The application combines **LLM-based requirement extraction**, a **constraint-aw
 
 ## Overview
 
-The **KOHLER AI Bathroom Designer** helps users plan a bathroom by understanding their requirements and selecting suitable products from a curated KOHLER product dataset.
+The ** AI Bathroom Designer** helps users plan a bathroom by understanding their requirements and selecting suitable products from a curated   product dataset.
 
 Users can interact with the system in two ways:
 
@@ -53,30 +53,8 @@ The selected recommendation can then be visualized using a **2D schematic bathro
 
 The system follows a modular pipeline in which the LLM is responsible for understanding natural-language requirements, while deterministic Python components perform validation, filtering, scoring, optimization, explanation generation, and spatial layout generation.
 
-![KOHLER AI Bathroom Designer System Architecture](<PPT,PROMPT,VIDEO/Data Flow Diagram.png>)
+![  AI Bathroom Designer System Architecture](<PPT,PROMPT,VIDEO\data_flow_diagram.png>)
 
-### Major Data Stores
-
-```text
-D1 - LLM Prompt Configuration
-     System prompts and extraction instructions
-
-D2 - Validation Configuration
-     Allowed categories, styles, priorities and constraints
-
-D3 - KOHLER Product Dataset
-     Product information, prices, dimensions, styles,
-     water usage and scoring attributes
-
-D4 - Explanation Logic
-     Rules used to generate factual recommendation explanations
-
-D5 - Layout Rules
-     Fixture clearance, entry protection,
-     placement and orientation rules
-```
-
----
 
 ## How It Works
 
@@ -473,20 +451,30 @@ It communicates:
 kohler-ai-bathroom-designer/
 │
 ├── data/
-│   └── KOHLER_AI_Bathroom_Designer_FINAL_DATASET_v3.csv
+│   ├── KOHLER_AI_Bathroom_Designer_FINAL_DATASET_v3.csv
+│   ├── KOHLER_AI_Bathroom_Designer_FINAL_DATASET_v3.xlsx
+│   ├── KOHLER_trustified_primitive_dataset_v3.csv
+│   └── KOHLER_trustified_primitive_dataset_v3.xlsx
 │
 ├── notebooks/
-│   └── KOHLER_AI_Bathroom_Designer_Data_Pipeline.ipynb
-│
-├── src/
-│   ├── __init__.py
-│   ├── recommender.py
-│   ├── requirement_extractor.py
-│   ├── recommendation_explainer.py
-│   └── layout.py
+│   ├── AI_Bathroom_Recommender_Pipeline.ipynb
+│   └── KOHLER_AI_Bathroom_Designer_Data_Pipeline_FINAL_v3.ipynb
 │
 ├── outputs/
 │   └── bathroom_layout.png
+│
+├── PPT,PROMPT,VIDEO/
+│   ├── data_flow_diagram.png
+│   ├── prompt.pdf
+│   ├── TRACK1-RECOMMENDATION SYSTEM.pdf
+│   └── video-link.txt
+│
+├── src/
+│   ├── __init__.py
+│   ├── layout.py
+│   ├── recommendation_explainer.py
+│   ├── recommender.py
+│   └── requirement_extractor.py
 │
 ├── gradio_app.py
 ├── test.py
@@ -562,12 +550,6 @@ GEMINI_API_KEY=your_api_key_here
 The application loads the environment variable using `python-dotenv`.
 
 The API key should never be committed to GitHub.
-
-Add the following to `.gitignore`:
-
-```text
-.env
-```
 
 The requirement extraction module raises an error if the required API key is unavailable.
 
@@ -703,7 +685,7 @@ The dataset contains the catalog information required by the recommendation engi
 * Water-efficiency scoring
 * Compactness scoring
 
-The prototype uses a curated KOHLER product dataset for the case study.
+The prototype uses a curate product dataset for the case study.
 
 The dataset is loaded dynamically by:
 
@@ -905,7 +887,7 @@ Recommendations
 
 ## Team / Author
 
-### KOHLER AI Bathroom Designer
+###  AI Bathroom Designer
 
 Developed as part of the **KOHLER–MIT-WPU AI Research Lab Program**.
 

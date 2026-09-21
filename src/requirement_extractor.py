@@ -201,14 +201,20 @@ def extract_requirements(user_input):
             "User requirement cannot be empty."
         )
 
+    # Normalize whitespace while preserving the user's wording.
+    user_input = " ".join(user_input.strip().split())
+
     prompt = f"""
 You are a requirement extraction system for a bathroom
 product recommendation application.
 
+The user's input is CASE-INSENSITIVE.
+Treat uppercase, lowercase, and mixed-case words as equivalent.
+
 Extract the user's requirements and return ONLY valid JSON.
 
 
- # FIELDS
+# FIELDS
 
 
 request_type:
@@ -224,20 +230,36 @@ Allowed values:
 - Shower
 - Vanity
 
+Category matching is CASE-INSENSITIVE.
+
+Examples:
+- toilet -> "Toilet"
+- TOILET -> "Toilet"
+- Toilet -> "Toilet"
+- faucet -> "Faucet"
+- FAUCET -> "Faucet"
+- shower -> "Shower"
+- vanity -> "Vanity"
+
 For a full bathroom, always return:
 ["Toilet", "Faucet", "Shower", "Vanity"]
 
 For a product search, return ONLY the categories requested.
 Respect words such as "only".
 
+
 budget:
 - Maximum budget in INR.
+- Budget expressions are CASE-INSENSITIVE.
 - Convert lakh notation.
 - 1 lakh = 100000
 - 1.5 lakh = 150000
 - 2 lakh = 200000
+- "40k" or "40K" = 40000
+- "rs 40k", "RS 40K", or "Rs 40K" = 40000
 - For a range such as "40-50k", use the upper limit: 50000.
 - If no budget is provided, use null.
+
 
 desired_style:
 Allowed values:
@@ -248,7 +270,9 @@ Allowed values:
 - Japanese Zen
 
 Map natural language to the closest allowed style.
+Style matching is CASE-INSENSITIVE.
 If no style is specified, use null.
+
 
 priority:
 Allowed values:
@@ -261,13 +285,16 @@ Examples:
 - premium / high-end -> Luxury
 - otherwise -> Best Overall
 
+
 bathroom_width_ft:
 Bathroom width in feet. Convert other units to feet.
 If not provided, use null.
 
+
 bathroom_depth_ft:
 Bathroom depth in feet. Convert other units to feet.
 If not provided, use null.
+
 
 missing_information:
 Possible values:
@@ -282,12 +309,14 @@ Rules:
   missing_information.
 - If all required information is present, return [].
 
+
 IMPORTANT:
 - Do not invent values.
 - Do not recommend products.
 - Do not calculate scores.
 - Return ONLY JSON.
 - Do not use markdown fences.
+- Treat uppercase and lowercase input as equivalent.
 
 USER REQUIREMENT:
 {user_input}
@@ -335,8 +364,6 @@ USER REQUIREMENT:
     validate_requirements(requirements)
 
     return requirements
-
-
     
 # TEST
     
