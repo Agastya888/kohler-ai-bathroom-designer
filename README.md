@@ -53,7 +53,7 @@ The selected recommendation can then be visualized using a **2D schematic bathro
 
 The system follows a modular pipeline in which the LLM is responsible for understanding natural-language requirements, while deterministic Python components perform validation, filtering, scoring, optimization, explanation generation, and spatial layout generation.
 
-![  AI Bathroom Designer System Architecture](<PPT,PROMPT,VIDEO\data_flow_diagram.png>)
+![Data Flow Diagram](PPT,PROMPT,VIDEO/data_flow_diagram.png)
 
 
 ## How It Works
